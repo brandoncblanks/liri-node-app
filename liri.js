@@ -7,21 +7,24 @@ var spotify = new Spotify(keys.spotify);
 
 var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
-var queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
 
-concertThis = function (){};
+concertThis = function (){
+    
+};
 
 spotifyThisSong = function (){
-    axios.get(queryUrl).then(
-        function(response){
-            console.log("Name of Venue:" = response.data.Venue);
-            console.log("Location:" = response.data.Location);
-            console.log("Date:" = response.data.Date);
+    spotify
+  .request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
+  .then(function(data) {
+    console.log(data); 
+  })
+  .catch(function(err) {
+    console.error('Error occurred: ' + err); 
+  });
 
-        }
-    )
 };
+
 
 movieThis = function (){
     axios.get(queryUrl).then(
